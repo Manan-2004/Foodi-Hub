@@ -1,0 +1,227 @@
+<section class="signup-page">
+
+    <div class="signup-container">
+
+        <!-- Left -->
+
+        <div class="signup-banner">
+
+            <div class="overlay"></div>
+
+            <div class="banner-content">
+
+                <h1>🍔 FoodieHub</h1>
+
+                <h3>
+
+                    Join the Food Journey
+
+                </h3>
+
+                <p>
+
+                    Create your account and discover delicious meals delivered to your doorstep
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right -->
+
+        <div class="signup-box">
+
+            <h2>
+
+                Create Account 👋
+
+            </h2>
+
+            <p class="subtitle">
+
+                Start your food journey today
+
+            </p>
+
+
+            <form [formGroup]="signupForm" (ngSubmit)="submit()">
+
+
+                <!-- Name -->
+
+                <div class="input-group">
+
+                    <input type="text" placeholder="Full Name" formControlName="name">
+
+
+                    @if(
+                    signupForm.get('name')?.invalid &&
+                    signupForm.get('name')?.touched
+                    ){
+
+                    <div class="error-message">
+
+                        Name should contain minimum 3 letters
+
+                    </div>
+
+                    }
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="input-group">
+
+                    <input type="email" placeholder="Email Address" formControlName="email">
+
+
+                    @if(
+                    signupForm.get('email')?.invalid &&
+                    signupForm.get('email')?.touched
+                    ){
+
+                    <div class="error-message">
+
+                        Enter valid email address
+
+                    </div>
+
+                    }
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="input-group">
+
+                    <input [type]="showPassword ? 'text':'password'" placeholder="Password" formControlName="password">
+
+
+                    <span class="eye" (click)="togglePassword()">
+
+                        {{showPassword ? '🙈':'👁️'}}
+
+                    </span>
+
+
+                    @if(
+                    signupForm.get('password')?.errors &&
+                    signupForm.get('password')?.touched
+                    ){
+
+                    <div class="validation-box">
+
+                        Password must contain:
+
+                        <ul>
+
+                            <li>Minimum 8 characters</li>
+
+                            <li>1 uppercase letter</li>
+
+                            <li>1 lowercase letter</li>
+
+                            <li>1 number</li>
+
+                            <li>1 special character</li>
+
+                        </ul>
+
+                    </div>
+
+                    }
+
+                </div>
+
+
+
+                <!-- Confirm Password -->
+
+                <div class="input-group">
+
+                    <input [type]="showConfirmPassword ? 'text':'password'" placeholder="Confirm Password"
+                        formControlName="confirmPassword">
+
+
+                    <span class="eye" (click)="toggleConfirmPassword()">
+
+                        {{showConfirmPassword ? '🙈':'👁️'}}
+
+                    </span>
+
+                </div>
+                @if(signupForm.hasError('passwordMismatch')&&signupForm.get('confirmPassword')?.touched){
+
+                <div class="error-message">
+
+                    Passwords do not match
+
+                </div>
+
+                }
+
+
+                <button type="submit" class="signup-btn">
+
+                    Create Account
+
+                </button>
+
+            </form>
+
+
+            <div class="divider">
+
+                <span>
+
+                    OR CONTINUE WITH
+
+                </span>
+
+            </div>
+
+
+            <div class="social-buttons">
+
+                <button class="social-btn">
+
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg">
+
+                    Google
+
+                </button>
+
+
+                <button class="social-btn">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png">
+
+                    Facebook
+
+                </button>
+
+            </div>
+
+
+            <p class="login-text">
+
+                Already have account?
+
+                <a routerLink="/auth/login">
+
+                    Login
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>

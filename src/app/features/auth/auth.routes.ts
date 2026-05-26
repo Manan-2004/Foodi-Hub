@@ -1,13 +1,16 @@
 import { Routes } from '@angular/router';
+import { loginGuard } from '../../core/guards/login-guard';
 
 export const AUTH_ROUTES: Routes = [
     {
         path: 'login',
-        loadComponent: () => import('./login/login').then(c => c.Login)
+        loadComponent: () => import('./login/login').then(c => c.Login),
+        canActivate:[loginGuard]
     },
     {
-        path: 'register',
+        path: 'signup',
         loadComponent: () =>
-            import('./register/register').then(m => m.Register)
+            import('./signup/signup').then(m => m.Signup),
+        canActivate:[loginGuard]
     }
 ];

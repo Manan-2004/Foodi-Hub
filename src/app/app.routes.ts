@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
 
     // Default redirect
-    { path: '', redirectTo: 'customer/home', pathMatch: 'full' },
+    { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
 
     // Auth Routes (Login/Register)
     {

@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Loader } from './loader';
+import { AddressList } from './address-list';
 
-describe('Loader', () => {
-  let component: Loader;
-  let fixture: ComponentFixture<Loader>;
+describe('AddressList', () => {
+  let component: AddressList;
+  let fixture: ComponentFixture<AddressList>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Loader],
+      imports: [AddressList],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Loader);
+    fixture = TestBed.createComponent(AddressList);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

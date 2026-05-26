@@ -5,6 +5,7 @@ import { allFoods } from '../../../../../core/food-data/all-foods';
 import { FoodList } from '../food-list/food-list';
 import { Cartservice } from '../../../../../core/services/frontendservices/cart/cartservice';
 import { Alert } from '../../../../../core/services/frontendservices/messages/alert';
+import { Authservice } from '../../../../../core/services/frontendservices/auth/authservice';
 
 
 @Component({
@@ -27,6 +28,8 @@ export class FoodDetails {
   cartService = inject(Cartservice);
 
   alertService = inject(Alert)
+  
+  authService=inject(Authservice)
 
   ngOnInit() {
 
@@ -73,6 +76,10 @@ export class FoodDetails {
 
 
   addItem() {
+    if(!this.authService.isLoggedIn()){
+        this.router.navigate(['/auth/login'])
+        return
+    }
     if (this.food) {
       this.cartService.addToCart(this.food);
       this.alertService.success('Added', `${this.food.name} added to cart`
@@ -81,6 +88,10 @@ export class FoodDetails {
   }
 
   orderNow() {
+    if(!this.authService.isLoggedIn()){
+        this.router.navigate(['auth/login'])
+        return
+    }
     if (this.food) {
        this.cartService.buynow(this.food)
        this.router.navigate(['/customer/checkout']);

@@ -1,0 +1,52 @@
+<div class="card" [routerLink]="['/customer/menu/details',food().id]">
+
+    <div class="image-box">
+
+        <img [ngSrc]="food().image" width="400" height="300" loading="lazy" priority="false" [alt]="food().name">
+        <span class="rating">
+
+            ⭐ {{food().rating}}
+
+        </span>
+
+    </div>
+
+    <div class="card-content">
+
+        <span class="category">
+
+            {{food().category}}
+
+        </span>
+
+        <h2>
+
+            {{food().name}}
+
+        </h2>
+
+        <p class="description">
+
+            {{food().description}}
+
+        </p>
+
+        <div class="bottom">
+
+            <h3>
+
+                ₹{{food().price}}
+
+            </h3>
+
+            <button (click)="addItem($event)">
+
+                🛒 Add
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

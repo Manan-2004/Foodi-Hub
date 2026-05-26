@@ -1,0 +1,26 @@
+<section class="cart-page">
+
+    <div class="left-section">
+        <!-- Cart Items -->
+        <app-cart-items>
+        </app-cart-items>
+
+        <!-- Coupen -->
+        <app-coupon-box>
+        </app-coupon-box>
+
+        <!-- recommended-foods -->
+        <app-recommended-foods>
+        </app-recommended-foods>
+    </div>
+
+
+    <div class="right-section">
+        @if(cartServices.cartItems().length > 0){
+        <!-- Cart Summary -->
+        <app-cart-summary>
+        </app-cart-summary>
+        }
+    </div>
+
+</section>

@@ -1,0 +1,170 @@
+.summary-box {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, .08);
+
+    border: 1px solid #f1f1f1;
+}
+
+.summary-box h2 {
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+.row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 14px 0;
+
+    font-size: 16px;
+
+    color: #666;
+}
+
+.row span:last-child {
+
+    font-weight: 600;
+}
+
+.total {
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #ff5a1f;
+}
+
+.summary-box button {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: linear-gradient(135deg,
+            #ff5a1f,
+            #ff7849);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+.summary-box button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(255, 90, 31, .35);
+}
+
+
+/* Mobile premium checkout */
+
+@media(max-width:992px) {
+
+    .summary-box {
+
+        position: fixed;
+
+        bottom: 10px;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: 95%;
+
+        padding: 16px;
+
+        border-radius: 25px;
+
+        background: rgba(255, 255, 255, .95);
+
+        backdrop-filter: blur(20px);
+
+        box-shadow:
+            0 8px 35px rgba(0, 0, 0, .18);
+
+        z-index: 1000;
+    }
+
+    .summary-box h2 {
+
+        display: none;
+    }
+
+    /* small drag line top */
+
+    .summary-box::before {
+
+        content: '';
+
+        display: block;
+
+        width: 50px;
+
+        height: 5px;
+
+        background: #ddd;
+
+        border-radius: 20px;
+
+        margin: auto;
+
+        margin-bottom: 12px;
+    }
+
+    .row {
+
+        padding: 5px 0;
+
+        font-size: 14px;
+    }
+
+    .total {
+
+        font-size: 20px;
+
+        padding-top: 8px;
+    }
+
+    .summary-box button {
+
+        margin-top: 10px;
+
+        padding: 13px;
+
+        font-size: 15px;
+
+        border-radius: 18px;
+    }
+
+}

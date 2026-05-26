@@ -1,0 +1,577 @@
+/* =========================
+   FULL PREMIUM SUCCESS PAGE
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.success-page{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:30px;
+
+    background:
+    radial-gradient(circle at top left,#ffb08822,transparent 35%),
+    radial-gradient(circle at bottom right,#22c55e22,transparent 35%),
+    linear-gradient(135deg,#fff6f1,#fff,#fff8f4);
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.success-page::before,
+.success-page::after{
+
+    content:"";
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    animation:float 10s infinite alternate ease-in-out;
+}
+
+.success-page::before{
+
+    width:450px;
+    height:450px;
+
+    background:#ff5a1f33;
+
+    top:-150px;
+    left:-120px;
+}
+
+.success-page::after{
+
+    width:350px;
+    height:350px;
+
+    background:#22c55e22;
+
+    bottom:-120px;
+    right:-100px;
+}
+
+/* floating particles */
+
+.floating{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    backdrop-filter:blur(10px);
+
+    background:rgba(255,255,255,.35);
+
+    animation:bubble linear infinite;
+}
+
+.floating1{
+
+    width:70px;
+    height:70px;
+
+    left:10%;
+    bottom:-80px;
+
+    animation-duration:12s;
+}
+
+.floating2{
+
+    width:40px;
+    height:40px;
+
+    left:50%;
+    bottom:-100px;
+
+    animation-duration:9s;
+
+    animation-delay:2s;
+}
+
+.floating3{
+
+    width:90px;
+    height:90px;
+
+    right:10%;
+    bottom:-120px;
+
+    animation-duration:14s;
+
+    animation-delay:4s;
+}
+
+/* =========================
+   CONTENT CONTAINER
+========================= */
+
+.success-container{
+
+    width:100%;
+    max-width:700px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:10;
+
+    animation:fadeUp 1s ease;
+}
+
+/* =========================
+   SUCCESS ICON
+========================= */
+
+.success-animation{
+
+    position:relative;
+
+    width:170px;
+    height:170px;
+
+    margin:auto;
+}
+
+/* pulse rings */
+
+.ring{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    border:2px solid rgba(34,197,94,.25);
+
+    animation:ring 3s infinite;
+}
+
+.ring2{
+
+    animation-delay:1s;
+}
+
+.ring3{
+
+    animation-delay:2s;
+}
+
+/* success circle */
+
+.success-icon{
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+    linear-gradient(135deg,#22c55e,#16a34a);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 20px 60px rgba(34,197,94,.45),
+    inset 0 -10px 20px rgba(0,0,0,.15);
+
+    animation:pop .8s ease;
+}
+
+.success-icon svg{
+
+    width:90px;
+    height:90px;
+}
+
+.check-path{
+
+    fill:none;
+
+    stroke:white;
+
+    stroke-width:8;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    stroke-dasharray:100;
+
+    stroke-dashoffset:100;
+
+    animation:draw .8s ease forwards .5s;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.status{
+
+    display:inline-block;
+
+    margin-top:40px;
+
+    padding:10px 22px;
+
+    border-radius:50px;
+
+    background:#ffefe8;
+
+    color:#ff5a1f;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    animation:fade .8s ease;
+}
+
+.success-content h1{
+
+    margin-top:24px;
+
+    font-size:54px;
+
+    line-height:1.15;
+
+    font-weight:800;
+
+    color:#111;
+
+    animation:fadeUp .9s ease;
+}
+
+.success-content p{
+
+    margin-top:18px;
+
+    color:#666;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    animation:fade .9s ease;
+}
+
+/* =========================
+   ORDER BOX
+========================= */
+
+.order-id{
+
+    margin-top:40px;
+
+    display:inline-flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding:22px 38px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.6);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.5);
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.08);
+
+    animation:zoom .8s ease;
+}
+
+.order-id small{
+
+    color:#999;
+
+    letter-spacing:2px;
+}
+
+.order-id h2{
+
+    margin-top:10px;
+
+    color:#ff5a1f;
+
+    font-size:34px;
+
+    font-weight:800;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-group{
+
+    margin-top:45px;
+
+    display:flex;
+    justify-content:center;
+
+    gap:20px;
+
+    animation:fadeUp 1s ease;
+}
+
+button{
+
+    padding:18px 32px;
+
+    border:none;
+
+    border-radius:60px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.4s ease;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* shine effect */
+
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.4),
+        transparent
+    );
+
+    transition:.6s;
+}
+
+button:hover::before{
+
+    left:100%;
+}
+
+.primary-btn{
+
+    color:white;
+
+    background:
+    linear-gradient(90deg,#ff5a1f,#ff7b50);
+
+    box-shadow:
+    0 15px 35px rgba(255,90,31,.35);
+}
+
+.secondary-btn{
+
+    background:white;
+
+    color:#222;
+
+    border:1px solid #eee;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.06);
+}
+
+button:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.03);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes draw{
+
+    to{
+        stroke-dashoffset:0;
+    }
+}
+
+@keyframes pop{
+
+    0%{
+        transform:translate(-50%,-50%) scale(.2);
+        opacity:0;
+    }
+
+    70%{
+        transform:translate(-50%,-50%) scale(1.1);
+    }
+
+    100%{
+        transform:translate(-50%,-50%) scale(1);
+        opacity:1;
+    }
+}
+
+@keyframes ring{
+
+    0%{
+        transform:scale(.7);
+        opacity:.8;
+    }
+
+    100%{
+        transform:scale(1.5);
+        opacity:0;
+    }
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes zoom{
+
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes float{
+
+    from{
+        transform:translate(-20px,-20px);
+    }
+
+    to{
+        transform:translate(30px,30px);
+    }
+}
+
+@keyframes bubble{
+
+    from{
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:
+        translateY(-120vh)
+        rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .success-content h1{
+
+        font-size:34px;
+    }
+
+    .success-content p{
+
+        font-size:15px;
+    }
+
+    .btn-group{
+
+        flex-direction:column;
+    }
+
+    button{
+
+        width:100%;
+    }
+
+    .order-id{
+
+        width:100%;
+    }
+}

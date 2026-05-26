@@ -1,0 +1,65 @@
+<section class="download">
+
+    <div class="download-content">
+
+        <span class="tag">
+            {{appData.tag}}
+        </span>
+
+        <h2>
+            {{appData.title}}
+        </h2>
+
+        <p>
+            {{appData.description}}
+        </p>
+
+        <div class="feature-list">
+
+            <div class="feature">
+                ⚡ Fast Delivery
+            </div>
+
+            <div class="feature">
+                📍 Live Tracking
+            </div>
+
+            <div class="feature">
+                🎁 Exclusive Deals
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <button class="play-btn">
+                ▶ {{appData.playStore}}
+            </button>
+
+            <button class="app-btn">
+                🍎 {{appData.appStore}}
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="phone-section">
+
+        <div class="circle-bg"></div>
+
+        <div class="circle-bg2"></div>
+
+        <div class="phone-card">
+
+            <img
+            [src]="appData.mobileImage"
+            alt="Phone"
+            class="phone-image">
+
+        </div>
+
+    </div>
+
+</section>

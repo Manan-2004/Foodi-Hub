@@ -1,0 +1,158 @@
+@if(food){
+
+<section class="details-container">
+
+    <!-- Left Image -->
+
+    <div class="food-image-section">
+
+        <div class="image-box">
+
+            <img [src]="food.image" [alt]="food.name">
+
+            <span class="rating-badge">
+
+                ⭐ {{food.rating}}
+
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Right Content -->
+
+    <div class="food-info">
+
+        <span class="category">
+
+            {{food.category}}
+
+        </span>
+
+        <h1>
+
+            {{food.name}}
+
+        </h1>
+
+        <div class="rating-row">
+
+            <span>
+
+                ⭐ {{food.rating}}
+
+            </span>
+
+            <span>
+
+                🔥 Popular Choice
+
+            </span>
+
+        </div>
+
+
+        <p class="description">
+
+            {{food.description}}
+
+        </p>
+
+
+        <div class="price">
+
+            ₹{{food.price}}
+
+        </div>
+
+
+        <div class="quantity-section">
+
+            <button>
+
+                −
+
+            </button>
+
+            <span>
+
+                1
+
+            </span>
+
+            <button>
+
+                +
+
+            </button>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <button class="cart-btn" (click)="addItem()">
+
+                🛒 Add To Cart
+
+            </button>
+
+            <button class="buy-btn" (click)="orderNow()">
+
+                ⚡ Order Now
+
+            </button>
+
+        </div>
+
+
+        <div class="extra-info">
+
+            <div class="info-box">
+
+                🚚 Free Delivery
+
+            </div>
+
+            <div class="info-box">
+
+                ⏱ 30 Min Delivery
+
+            </div>
+
+            <div class="info-box">
+
+                🥗 Fresh Ingredients
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Related Foods -->
+
+<section class="related-section">
+
+    <h2>
+
+        Similar {{food.category}} Items
+
+    </h2>
+
+    <p>
+
+        You may also like these foods
+
+    </p>
+
+    <app-food-list [foods]="realtedfoods"> </app-food-list>
+
+</section>
+
+}

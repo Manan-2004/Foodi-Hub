@@ -1,0 +1,10 @@
+
+<div class="food-container">
+
+    @for(food of foods();track food.id){
+
+    <app-displayfoodcard [food]="food"></app-displayfoodcard>
+
+    }
+
+</div>

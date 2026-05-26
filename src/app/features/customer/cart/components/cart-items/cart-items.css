@@ -1,0 +1,201 @@
+.cart-box {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, .08);
+}
+
+.cart-box h1 {
+
+    margin-bottom: 10px;
+}
+
+.subtitle {
+
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+.cart-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+    border-radius: 25px;
+
+    border: 1px solid #eee;
+
+    transition: .4s;
+}
+
+.cart-item:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, .08);
+}
+
+.cart-item img {
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 20px;
+
+    object-fit: cover;
+
+    transition: .4s;
+}
+
+.cart-item img:hover {
+
+    transform: scale(1.05);
+}
+
+.details {
+
+    flex: 1;
+}
+
+.details h3 {
+
+    margin-bottom: 8px;
+}
+
+.details p {
+
+    color: #777;
+
+    margin: 10px 0;
+
+    font-size: 14px;
+}
+
+.details span {
+
+    color: #ff5a1f;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+.quantity {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #f7f7f7;
+
+    padding: 8px 15px;
+
+    border-radius: 50px;
+}
+
+.quantity button {
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg,
+            #ff5a1f,
+            #ff7849);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: .3s;
+}
+
+.quantity button:hover {
+
+    transform: scale(1.1);
+}
+
+.delete {
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #fff2ee;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: .4s;
+}
+
+.delete:hover {
+
+    transform: rotate(15deg);
+
+    background: #ffd8cf;
+}
+
+.empty-cart {
+
+    text-align: center;
+
+    padding: 50px;
+
+    color: #888;
+
+    font-size: 24px;
+}
+
+@media(max-width:768px) {
+
+    .cart-item {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .cart-item img {
+
+        width: 100%;
+
+        height: 220px;
+    }
+
+    .details {
+
+        width: 100%;
+    }
+
+    .quantity {
+
+        margin-top: 10px;
+    }
+
+}

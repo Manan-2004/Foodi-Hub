@@ -1,0 +1,111 @@
+<!-- Top Rated -->
+
+<section class="food-section">
+
+    <div class="section-heading">
+
+        <h2>
+
+            ⭐ Top Rated Foods
+
+        </h2>
+
+        <p>
+
+            Customer favorite dishes
+
+        </p>
+
+    </div>
+
+    <div class="food-highlight">
+
+        @for(food of topFoods;track food.title){
+
+        <div class="highlight-card">
+
+            <div class="emoji">
+
+                {{food.image}}
+
+            </div>
+
+            <h3>
+
+                {{food.title}}
+
+            </h3>
+
+            <p>
+
+                {{food.description}}
+
+            </p>
+
+            <span>
+
+                {{food.rating}}
+
+            </span>
+
+        </div>
+
+        }
+
+    </div>
+
+</section>
+
+
+
+<!-- Why Choose -->
+
+<section class="why-foodie">
+
+    <div class="section-heading">
+
+        <h2>
+
+            Why Choose FoodieHub?
+
+        </h2>
+
+        <p>
+
+            Fast, fresh and reliable service
+
+        </p>
+
+    </div>
+
+    <div class="why-grid">
+
+        @for(feature of features;track feature.title){
+
+        <div class="why-card">
+
+            <div class="icon">
+
+                {{feature.icon}}
+
+            </div>
+
+            <h3>
+
+                {{feature.title}}
+
+            </h3>
+
+            <p>
+
+                {{feature.description}}
+
+            </p>
+
+        </div>
+
+        }
+
+    </div>
+
+</section>

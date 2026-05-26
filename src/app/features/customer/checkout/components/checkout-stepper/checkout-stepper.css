@@ -1,0 +1,88 @@
+.stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.stepper::-webkit-scrollbar {
+    display: none;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.step.active .circle {
+    background: #ff5a1f;
+    color: #fff;
+}
+
+.step span {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.line {
+    width: 120px;
+    height: 4px;
+    background: #ddd;
+    margin: 0 10px 24px;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.line.active {
+    background: #ff5a1f;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    .stepper {
+        justify-content: center;
+        gap: 0;
+        padding: 0 15px;
+    }
+
+    .circle {
+        width: 38px;
+        height: 38px;
+        font-size: 13px;
+    }
+
+    .step span {
+        font-size: 11px;
+    }
+
+    .line {
+        width: 50px;
+        margin: 0 6px 20px;
+    }
+}

@@ -1,0 +1,35 @@
+<section class="offers">
+
+    <h2>Special Offers</h2>
+
+    <div class="offer-container">
+
+        @for(offer of offers;track offer.title){
+
+        <div class="offer-card">
+
+            <div class="icon">
+
+                {{offer.icon}}
+
+            </div>
+
+            <h3>
+
+                {{offer.title}}
+
+            </h3>
+
+            <p>
+
+                {{offer.description}}
+
+            </p>
+
+        </div>
+
+        }
+
+    </div>
+
+</section>

@@ -1,0 +1,30 @@
+<section class="why">
+
+    <h2>Why Choose Us</h2>
+    <br>
+    <br>
+    <div class="feature-container">
+
+        @for(feature of features;track feature.title){
+
+        <div class="feature-card">
+
+            <div>
+
+                {{feature.icon}}
+
+            </div>
+
+            <h3>
+
+                {{feature.title}}
+
+            </h3>
+
+        </div>
+
+        }
+
+    </div>
+
+</section>

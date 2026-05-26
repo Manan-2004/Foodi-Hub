@@ -1,0 +1,142 @@
+.error-page{
+
+    min-height:calc(100vh + 40px);
+
+    width:calc(100% + 40px);
+
+    margin:-20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+    135deg,
+    #ff5a1f,
+    #ff9966
+    );
+
+    overflow:hidden;
+}
+
+.error-card{
+
+    background:white;
+
+    width:90%;
+    max-width:550px;
+
+    padding:50px 35px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+    animation:upDown 2s infinite alternate;
+}
+
+.food-icon{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+}
+
+.error-card h1{
+
+    font-size:100px;
+
+    color:#ff5a1f;
+
+    line-height:1;
+}
+
+.error-card h2{
+
+    margin-top:10px;
+
+    font-size:32px;
+
+    color:#333;
+}
+
+.error-card p{
+
+    margin:20px 0;
+
+    color:#777;
+
+    line-height:1.6;
+}
+
+.error-card button{
+
+    border:none;
+
+    outline:none;
+
+    background:#ff5a1f;
+
+    color:white;
+
+    padding:14px 28px;
+
+    border-radius:30px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.error-card button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 8px 15px rgba(255,90,31,.3);
+}
+
+@keyframes upDown{
+
+    from{
+        transform:translateY(-8px);
+    }
+
+    to{
+        transform:translateY(8px);
+    }
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.error-card{
+
+padding:35px 20px;
+}
+
+.food-icon{
+
+font-size:45px;
+}
+
+.error-card h1{
+
+font-size:70px;
+}
+
+.error-card h2{
+
+font-size:24px;
+}
+
+.error-card p{
+
+font-size:14px;
+}
+
+}

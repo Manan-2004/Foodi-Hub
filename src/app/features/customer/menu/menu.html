@@ -1,0 +1,44 @@
+<section class="menu-page">
+
+    <!-- Header -->
+
+    <div class="menu-header">
+
+        <span class="tag">
+
+            🍴 Food Menu
+
+        </span>
+
+        <h1>
+
+            Explore Delicious Foods
+
+        </h1>
+
+        <p>
+
+            Browse categories and discover your favorite dishes.
+
+        </p>
+
+    </div>
+
+    <!-- Categories -->
+    <app-category-filter></app-category-filter>
+
+    <!-- Child Routes -->
+    <div class="menu-content">
+        <router-outlet></router-outlet>
+    </div>
+
+    <app-food-card [title]="'Best Dishes'" [subtitle]="'Discover our most loved dishes'"></app-food-card>
+    
+
+    <!-- Special Offers -->
+    <app-special-offers> </app-special-offers>
+
+    <!-- top rated  -->
+    <app-top-rated></app-top-rated>
+    
+</section>

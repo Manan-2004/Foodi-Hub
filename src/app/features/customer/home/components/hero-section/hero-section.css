@@ -1,0 +1,263 @@
+.hero {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+
+    padding: 70px 60px;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(135deg,
+            #ff5a1f,
+            #ff9966);
+
+    overflow: hidden;
+
+    position: relative;
+
+    color: white;
+
+    margin-bottom: 60px;
+}
+
+/* Left */
+
+.hero-left {
+
+    flex: 1;
+}
+
+.tag {
+
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #ff5a1f;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.hero-left h1 {
+
+    font-size: 58px;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+.hero-left p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    opacity: .95;
+
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+
+.hero-btns {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+}
+
+.hero-btns button {
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+.order-btn {
+
+    background: white;
+
+    color: #ff5a1f;
+
+    font-weight: bold;
+}
+
+.menu-btn {
+
+    background: transparent;
+
+    border: 2px solid white;
+
+    color: white;
+}
+
+.hero-btns button:hover {
+
+    transform: translateY(-4px);
+}
+
+/* Stats */
+
+.hero-stats {
+
+    display: flex;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+.stat h3 {
+
+    font-size: 25px;
+}
+
+.stat span {
+
+    font-size: 14px;
+
+    opacity: .9;
+}
+
+/* Right */
+
+.hero-right {
+
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.circle-bg {
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .15);
+
+    backdrop-filter: blur(5px);
+}
+
+.food-image {
+
+    position: absolute;
+
+    font-size: 120px;
+
+    animation: float 2s infinite alternate;
+}
+
+@keyframes float {
+
+    from {
+        transform: translateY(-10px);
+    }
+
+    to {
+        transform: translateY(10px);
+    }
+}
+
+/* Tablet */
+
+@media(max-width:992px) {
+
+    .hero {
+
+        padding: 50px 35px;
+    }
+
+    .hero-left h1 {
+
+        font-size: 45px;
+    }
+
+    .circle-bg {
+
+        width: 280px;
+        height: 280px;
+    }
+
+    .food-image {
+
+        font-size: 90px;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px) {
+
+    .hero {
+
+        flex-direction: column-reverse;
+
+        text-align: center;
+
+        padding: 40px 25px;
+    }
+
+    .hero-left h1 {
+
+        font-size: 35px;
+    }
+
+    .hero-left p {
+
+        font-size: 15px;
+    }
+
+    .hero-btns {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .hero-stats {
+
+        justify-content: center;
+    }
+
+    .circle-bg {
+
+        width: 220px;
+        height: 220px;
+    }
+
+    .food-image {
+
+        font-size: 75px;
+    }
+
+}

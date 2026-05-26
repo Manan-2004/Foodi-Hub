@@ -1,0 +1,97 @@
+<section class="checkout-page">
+
+    <app-checkout-stepper [currentStep]="currentStep()">
+    </app-checkout-stepper>
+
+    <div class="content">
+
+        <div class="left-section">
+
+            <div [hidden]="currentStep()!==1">
+
+                <app-delivery-address (validStatus)="updateStatus($event)">
+                </app-delivery-address>
+
+            </div>
+
+
+            <div [hidden]="currentStep()!==2">
+
+                <app-order-items [items]="checkoutItems()">
+                </app-order-items>
+
+            </div>
+
+
+            <div [hidden]="currentStep()!==3">
+
+                <app-payment-method (paymentSelected)="updatePayment($event)">
+                </app-payment-method>
+
+            </div>
+
+        </div>
+
+
+        <div class="right-section">
+
+            <app-order-summary [items]="checkoutItems()">
+            </app-order-summary>
+
+        </div>
+
+    </div>
+
+
+    <div class="navigation">
+
+        <button class="previous" (click)="previous()" [disabled]="currentStep()===1">
+
+            ← Previous
+
+        </button>
+
+
+        @if(currentStep()<3){ <button class="next" (click)="next()">
+
+            Next →
+
+            </button>
+
+            }
+
+            @else{
+
+            @if(selectedPayment()==='ONLINE'){
+
+            <button class="pay-btn" (click)="payNow()">
+
+                💳 Proceed Payment
+
+            </button>
+
+            }
+
+            @else if(selectedPayment()==='COD'){
+
+            <button class="pay-btn" (click)="placeOrder()">
+
+                📦 Place Order
+
+            </button>
+
+            }
+
+            @else{
+
+            <button class="pay-btn" disabled>
+
+                Select Payment
+
+            </button>
+            }
+            }
+
+    </div>
+
+</section>

@@ -1,0 +1,23 @@
+<div class="category-wrapper">
+
+    <div class="category-nav" #slider>
+
+        @for(category of categories; track category.route){
+
+        <a [routerLink]="category.route" routerLinkActive="active" class="category-card">
+
+            <div class="icon">
+                {{category.icon}}
+            </div>
+
+            <span>
+                {{category.name}}
+            </span>
+
+        </a>
+
+        }
+
+    </div>
+
+</div>

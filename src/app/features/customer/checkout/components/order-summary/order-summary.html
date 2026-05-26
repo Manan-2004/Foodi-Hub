@@ -1,0 +1,106 @@
+<div class="summary-box">
+
+    <h2>
+
+        🧾 Order Summary
+
+    </h2>
+
+
+    <div class="row">
+
+        <span>
+
+            Items
+
+        </span>
+
+        <span>
+
+            {{totalItems()}}
+
+        </span>
+
+    </div>
+
+
+    <div class="row">
+
+        <span>
+
+            Subtotal
+
+        </span>
+
+        <span>
+
+            ₹{{subtotal()}}
+
+        </span>
+
+    </div>
+
+
+    <div class="row">
+
+        <span>
+
+            Delivery
+
+        </span>
+
+        <span>
+
+            @if(deliveryCharge()==0){
+
+            Free
+
+            }
+
+            @else{
+
+            ₹{{deliveryCharge()}}
+
+            }
+
+        </span>
+
+    </div>
+
+
+    <div class="row">
+
+        <span>
+
+            Discount
+
+        </span>
+
+        <span class="discount">
+
+            -₹{{discount()}}
+
+        </span>
+
+    </div>
+
+    <hr>
+
+
+    <div class="row total">
+
+        <span>
+
+            Total
+
+        </span>
+
+        <span>
+
+            ₹{{finalTotal()}}
+
+        </span>
+
+    </div>
+
+</div>

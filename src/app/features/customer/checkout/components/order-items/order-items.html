@@ -1,0 +1,40 @@
+<div class="checkout-card">
+
+    <h2>
+        🧾 Review Items
+    </h2>
+
+    @for(item of items();track item.food.id){
+
+    <div class="item">
+        <a [routerLink]="['/customer/menu/details',item.food.id]">
+            <img [src]="item.food.image">
+        </a>
+
+        <div class="details">
+
+            <h3>
+
+                {{item.food.name}}
+
+            </h3>
+
+            <p>
+
+                Qty : {{item.quantity}}
+
+            </p>
+
+        </div>
+
+        <div class="price">
+
+            ₹{{item.food.price*item.quantity}}
+
+        </div>
+
+    </div>
+
+    }
+
+</div>

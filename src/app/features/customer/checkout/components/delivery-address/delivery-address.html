@@ -1,0 +1,125 @@
+<div class="checkout-card">
+
+    <h2>
+        📍 Delivery Address
+    </h2>
+
+    <form [class.submitted]="checkoutForm.touched" [formGroup]="checkoutForm">
+
+        <div class="form-grid">
+
+            <div>
+
+                <input type="text" placeholder="👤 Full Name" formControlName="fullName">
+
+                @if(checkoutForm.get('fullName')?.invalid &&
+                checkoutForm.get('fullName')?.touched){
+
+                <small>
+                    Please enter your full name
+                </small>
+
+                }
+
+            </div>
+
+            <div>
+
+                <input type="tel" placeholder="📞 Phone Number" formControlName="phone">
+
+                @if(checkoutForm.get('phone')?.invalid &&
+                checkoutForm.get('phone')?.touched){
+
+                <small>
+                    Please enter valid phone
+                </small>
+
+                }
+
+            </div>
+
+            <div class="full-width">
+
+                <input type="text" placeholder="🏠 Full Address" formControlName="address">
+
+                @if(checkoutForm.get('address')?.invalid &&
+                checkoutForm.get('address')?.touched){
+
+                <small>
+                    Address required
+                </small>
+
+                }
+
+            </div>
+
+            <div>
+
+                <select formControlName="state">
+
+                    <option value="">
+
+                        Select State
+
+                    </option>
+
+                    @for(state of states;track state.name){
+
+                    <option [value]="state.name">
+
+                        {{state.name}}
+
+                    </option>
+
+                    }
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <select formControlName="city">
+
+                    <option value="">
+
+                        Select City
+
+                    </option>
+
+                    @for(city of selectedCities;track city){
+
+                    <option [value]="city">
+
+                        {{city}}
+
+                    </option>
+
+                    }
+
+                </select>
+
+            </div>
+
+            <div class="full-width">
+
+                <input type="text" placeholder="📮 Pincode" formControlName="pincode">
+
+                @if(checkoutForm.get('pincode')?.invalid &&
+                checkoutForm.get('pincode')?.touched){
+
+                <small>
+
+                    Enter valid pincode
+
+                </small>
+
+                }
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>

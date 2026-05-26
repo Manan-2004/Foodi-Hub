@@ -1,0 +1,82 @@
+<div class="checkout-card">
+
+    <h2>Payment Option</h2>
+    <br>
+    <div class="payment-option" [class.active]="selectedMethod()==='ONLINE'" (click)="selectPayment('ONLINE')">
+
+        <div class="left">
+
+            <div class="icon online">
+
+                💳
+
+            </div>
+
+            <div>
+
+                <strong>
+
+                    Online Payment
+
+                </strong>
+
+                <p>
+
+                    UPI • Cards • Wallet • Net Banking
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <span class="check">
+
+            @if(selectedMethod()==='ONLINE'){
+            ✔
+            }
+
+        </span>
+
+    </div>
+
+
+    <div class="payment-option" [class.active]="selectedMethod()==='COD'" (click)="selectPayment('COD')">
+
+        <div class="left">
+
+            <div class="icon cod">
+
+                📦
+
+            </div>
+
+            <div>
+
+                <strong>
+
+                    Cash On Delivery
+
+                </strong>
+
+                <p>
+
+                    Pay after receiving order
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <span class="check">
+
+            @if(selectedMethod()==='COD'){
+                 ✔
+            }
+
+        </span>
+
+    </div>
+
+</div>

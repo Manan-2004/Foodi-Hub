@@ -1,0 +1,163 @@
+.food-section,
+.why-foodie {
+
+    margin: 70px 0;
+}
+
+/* heading */
+
+.section-heading {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+
+    font-size: 35px;
+
+    margin-bottom: 10px;
+
+    color: #222;
+}
+
+.section-heading p {
+
+    color: #777;
+}
+
+
+/* Top Food */
+
+.food-highlight {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+}
+
+.highlight-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .08);
+
+    transition: .4s;
+}
+
+.highlight-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, .15);
+}
+
+.emoji {
+
+    font-size: 65px;
+
+    margin-bottom: 20px;
+}
+
+.highlight-card h3 {
+
+    margin-bottom: 10px;
+}
+
+.highlight-card p {
+
+    color: #777;
+
+    margin-bottom: 15px;
+
+    line-height: 1.6;
+}
+
+.highlight-card span {
+
+    color: #ff5a1f;
+
+    font-weight: 600;
+}
+
+
+/* Why choose */
+
+.why-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+.why-card {
+
+    background:
+        linear-gradient(135deg,
+            #ff5a1f,
+            #ff824d);
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    color: white;
+
+    text-align: center;
+
+    transition: .4s;
+}
+
+.why-card:hover {
+
+    transform:
+        translateY(-10px);
+}
+
+.icon {
+
+    font-size: 50px;
+
+    margin-bottom: 20px;
+}
+
+.why-card p {
+
+    margin-top: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* mobile */
+
+@media(max-width:768px) {
+
+    .section-heading h2 {
+
+        font-size: 28px;
+    }
+
+    .highlight-card,
+    .why-card {
+
+        padding: 25px;
+    }
+
+}

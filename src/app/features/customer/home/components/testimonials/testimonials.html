@@ -1,0 +1,58 @@
+<section class="testimonial">
+
+    <div class="heading">
+
+        <span>💬 What People Say</span>
+
+        <h2>Customer Reviews</h2>
+
+    </div>
+
+    <div class="review-container">
+
+        @for(review of reviews;track review.name){
+
+        <div class="review-card">
+
+            <div class="top">
+
+                <img [src]="review.image">
+
+                <div class="user-info">
+
+                    <h3>
+                        {{review.name}}
+                    </h3>
+
+                    <small>
+                        {{review.role}}
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="quote">
+
+                ❝
+            </div>
+
+            <p>
+
+                {{review.comment}}
+
+            </p>
+
+            <div class="rating">
+
+                {{review.rating}}
+
+            </div>
+
+        </div>
+
+        }
+
+    </div>
+
+</section>

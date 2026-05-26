@@ -1,0 +1,79 @@
+<div class="summary-box">
+
+    <h2>
+
+        Order Summary
+
+    </h2>
+
+    <div class="row">
+
+        <span>
+
+            Items
+
+        </span>
+
+        <span>
+
+            {{cartService.totalItems()}}
+
+        </span>
+
+    </div>
+
+    <div class="row">
+
+        <span>
+
+            Subtotal
+
+        </span>
+
+        <span>
+
+            ₹{{cartService.totalPrice()}}
+
+        </span>
+
+    </div>
+
+    <div class="row">
+
+        <span>
+
+            Delivery
+
+        </span>
+
+        <span>
+
+            Free
+
+        </span>
+
+    </div>
+
+    <hr>
+
+    <div class="row total">
+
+        <span>
+
+            Total
+
+        </span>
+
+        <span>
+
+            ₹{{cartService.totalPrice()}}
+
+        </span>
+
+    </div>
+
+    <button (click)="checkout()">
+        Checkout
+    </button>
+
+</div>

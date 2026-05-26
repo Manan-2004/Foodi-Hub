@@ -1,0 +1,275 @@
+/* Navbar */
+
+.navbar {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, .85);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, .06);
+
+    transition: .4s;
+
+    box-sizing: border-box;
+}
+
+
+/* Logo */
+
+.logo {
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #ff5a1f;
+
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+.logo:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+/* Nav Links */
+
+.nav-links {
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.nav-links a {
+
+    position: relative;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #444;
+
+    padding: 10px 0;
+
+    transition: .4s;
+}
+
+
+/* underline animation */
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0%;
+
+    height: 3px;
+
+    border-radius: 20px;
+
+    background: #ff5a1f;
+
+    transition: .4s;
+
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+
+    color: #ff5a1f;
+}
+
+
+/* Cart */
+
+.cart-link {
+
+    position: relative;
+}
+
+
+/* Cart badge */
+
+.cart-count {
+
+    position: absolute;
+
+    top: -10px;
+    right: -15px;
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    background: linear-gradient(135deg,
+            #ff5a1f,
+            #ff8c61);
+
+    color: white;
+
+    box-shadow:
+        0 5px 15px rgba(255, 90, 31, .4);
+
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* Login Button */
+
+.login-btn {
+
+    padding: 12px 22px !important;
+
+    border-radius: 50px;
+
+    background: linear-gradient(135deg,
+            #ff5a1f,
+            #ff7849);
+
+    color: white !important;
+
+    box-shadow:
+        0 10px 20px rgba(255, 90, 31, .25);
+
+    transition: .4s;
+}
+
+.login-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(255, 90, 31, .4);
+
+}
+
+.login-btn::after {
+
+    display: none;
+}
+
+
+/* Mobile Menu Button */
+
+.menu-btn {
+
+    display: none;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.menu-btn:hover {
+
+    transform: rotate(90deg);
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px) {
+
+    .menu-btn {
+
+        display: block;
+
+    }
+
+    .nav-links {
+
+        position: fixed;
+
+        top: 80px;
+        right: -100%;
+
+        width: 280px;
+        height: 100vh;
+
+        background: rgba(255, 255, 255, .95);
+
+        backdrop-filter: blur(20px);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        padding-top: 50px;
+
+        gap: 35px;
+
+        transition: .5s;
+
+        box-shadow:
+            -10px 0 30px rgba(0, 0, 0, .08);
+    }
+
+    .nav-links.open {
+
+        right: 0;
+    }
+
+}

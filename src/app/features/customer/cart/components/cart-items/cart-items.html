@@ -1,0 +1,68 @@
+<div class="cart-box">
+
+    <h1>
+
+        Your Cart
+
+    </h1>
+
+    <p class="subtitle">
+
+        {{cartService.totalItems()}} items added
+
+    </p>
+    @if(cartService.cartItems().length > 0){
+
+    @for(item of cartService.cartItems();track item.food.id){
+    <div class="cart-item">
+        <a [routerLink]="['/customer/menu/details',item.food.id]">
+            <img [src]="item.food.image">
+        </a>
+
+        <div class="details">
+
+            <h3>
+                {{item.food.name}}
+            </h3>
+            <p>
+                {{item.food.description}}
+            </p>
+            <span>
+                ₹{{item.food.price}}
+            </span>
+
+        </div>
+
+
+        <div class="quantity">
+
+            <button (click)="decreaseItem(item.food.id,item.food.name,item.quantity)">
+                −
+            </button>
+
+            <span>
+                {{item.quantity}}
+            </span>
+
+            <button (click)="cartService.increaseQty(item.food.id)">
+                +
+            </button>
+
+        </div>
+
+        <button class="delete" (click)="removeItem(item.food.id,item.food.name)">
+            🗑
+        </button>
+
+    </div>
+    }
+
+    }
+    @else{
+    <div class="empty-cart">
+
+        🛒 Your cart is empty
+
+    </div>
+    }
+</div>

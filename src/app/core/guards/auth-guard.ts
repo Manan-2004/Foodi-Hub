@@ -2,15 +2,21 @@ import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { Authservice } from '../services/frontendservices/auth/authservice';
 
-export const authGuard: CanActivateFn = (route, state) => {
-    const authService=inject(Authservice)
-    const router=inject(Router)
+export const authGuard: CanActivateFn = () => {
 
-    if(authService.isLoggedIn()){
-        return true
+    const authService = inject(Authservice);
+
+    const router = inject(Router);
+
+    // Login hai - page open
+    if (authService.isLoggedIn()){
+        return true;
+
     }
 
-    router.navigate(['/auth/login'])
+    // Login nahi - login page
+    return router.createUrlTree(
+        ['/auth/login']
+    );
 
-    return false
 };

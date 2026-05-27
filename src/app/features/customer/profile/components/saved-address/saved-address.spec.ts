@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddressList } from './address-list';
+import { SavedAddress } from './saved-address';
 
-describe('AddressList', () => {
-  let component: AddressList;
-  let fixture: ComponentFixture<AddressList>;
+describe('SavedAddress', () => {
+  let component: SavedAddress;
+  let fixture: ComponentFixture<SavedAddress>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddressList],
+      imports: [SavedAddress],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AddressList);
+    fixture = TestBed.createComponent(SavedAddress);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

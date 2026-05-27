@@ -1,0 +1,20 @@
+<section class="details">
+
+  <h3 class="title">Account Settings</h3>
+
+  @for(item of settings(); track item){
+
+    <section class="row">
+
+      <span class="icon">{{item.icon}}</span>
+
+      <div class="content">
+        <h4>{{item.title}}</h4>
+        <p>{{item.desc}}</p>
+      </div>
+
+    </section>
+
+  }
+
+</section>

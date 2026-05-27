@@ -1,0 +1,135 @@
+<section class="address">
+
+  <div class="address-header">
+
+    <h3>Saved Addresses</h3>
+
+    <button class="add-btn" (click)="openModal()">
+
+      + Add Address
+
+    </button>
+
+  </div>
+
+  @for(addr of addresses();track addr.id){
+
+  <div class="addr-card">
+
+    <div class="icon">
+      📍
+    </div>
+
+    <div>
+
+      <h4>{{addr.type}}</h4>
+
+      <p>{{addr.full}}</p>
+
+    </div>
+
+  </div>
+
+  }
+
+</section>
+
+
+@if(showModal){
+
+<div class="modal-overlay" [class.close-animation]="isClosing">
+
+  <div class="modal-box" [class.modal-close]="isClosing">
+
+    <div class="modal-header">
+
+      <h2>Add Address</h2>
+
+      <span class="close" (click)="closeModal()">
+
+        ✖
+
+      </span>
+
+    </div>
+
+    <form [formGroup]="addressForm" (ngSubmit)="saveAddress()">
+
+      <select formControlName="type">
+
+        <option value="Home">
+
+          Home
+
+        </option>
+
+        <option value="Work">
+
+          Work
+
+        </option>
+
+        <option value="Other">
+
+          Other
+
+        </option>
+
+      </select>
+
+
+      <input type="text" placeholder="Full Address" formControlName="full">
+
+
+      @if(addressForm.controls.full.touched &&
+      addressForm.controls.full.invalid){
+
+      <small class="error">
+
+        Address minimum 10 characters required
+
+      </small>
+
+      }
+
+      <input type="text" placeholder="City" formControlName="city">
+
+      @if(addressForm.controls.city.touched &&
+      addressForm.controls.city.invalid){
+
+      <small class="error">
+
+        City is required
+
+      </small>
+
+      }
+
+
+      <input type="text" placeholder="Pincode" formControlName="pincode">
+
+      @if(addressForm.controls.pincode.touched &&
+      addressForm.controls.pincode.invalid){
+
+      <small class="error">
+
+        Enter valid 6 digit pincode
+
+      </small>
+
+      }
+
+
+      <button type="submit">
+
+        Save Address
+
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+}

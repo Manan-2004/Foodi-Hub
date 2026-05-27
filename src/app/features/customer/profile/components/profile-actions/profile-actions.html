@@ -1,0 +1,41 @@
+<section class="actions">
+
+@for(item of actions();track item.id){
+
+<div
+class="action-card"
+(click)="handleAction(item)">
+
+<div class="top">
+
+<div class="action-icon">
+
+{{item.icon}}
+
+</div>
+
+<span class="arrow">
+
+→
+
+</span>
+
+</div>
+
+<h4>
+
+{{item.title}}
+
+</h4>
+
+<p>
+
+{{item.desc}}
+
+</p>
+
+</div>
+
+}
+
+</section>

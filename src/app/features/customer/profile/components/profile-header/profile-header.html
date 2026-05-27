@@ -1,1 +1,153 @@
-<p>profile-header works!</p>
+<section class="profile-card">
+
+    <div class="profile-left">
+
+        <div class="avatar-wrap">
+
+            <img [src]="user().image" [alt]="user().name">
+
+            <span class="status"></span>
+
+        </div>
+
+        <div class="profile-info">
+
+            <h2>{{user().name}}</h2>
+
+            <p>{{user().email}}</p>
+
+            <span>📍 {{user().city}}</span>
+
+        </div>
+
+    </div>
+
+    <button
+    class="edit-btn"
+    (click)="openModal()">
+
+        Edit Profile
+
+    </button>
+
+</section>
+
+
+@if(showModal){
+
+<div
+class="modal-overlay"
+[class.close-animation]="isClosing">
+
+<div
+class="modal-box"
+[class.modal-close]="isClosing">
+
+<div class="modal-header">
+
+<h2>Edit Profile</h2>
+
+<span
+class="close"
+(click)="closeModal()">
+
+✖
+
+</span>
+
+</div>
+
+
+<form
+[formGroup]="profileForm"
+(ngSubmit)="saveProfile()">
+
+<input
+type="text"
+placeholder="Full Name"
+formControlName="name">
+
+@if(profileForm.controls.name.touched &&
+profileForm.controls.name.invalid){
+
+<small class="error">
+
+Minimum 3 characters required
+
+</small>
+
+}
+
+
+<input
+type="email"
+placeholder="Email"
+formControlName="email">
+
+@if(profileForm.controls.email.touched &&
+profileForm.controls.email.invalid){
+
+<small class="error">
+
+Enter valid email
+
+</small>
+
+}
+
+
+<input
+type="text"
+placeholder="Mobile Number"
+formControlName="mobile">
+
+@if(profileForm.controls.mobile.touched &&
+profileForm.controls.mobile.invalid){
+
+<small class="error">
+
+Enter valid 10 digit number
+
+</small>
+
+}
+
+
+<input
+type="text"
+placeholder="City"
+formControlName="city">
+
+@if(profileForm.controls.city.touched &&
+profileForm.controls.city.invalid){
+
+<small class="error">
+
+City required
+
+</small>
+
+}
+
+
+<textarea
+rows="4"
+placeholder="Bio"
+formControlName="bio">
+
+</textarea>
+
+
+<button type="submit">
+
+Save Profile
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+}

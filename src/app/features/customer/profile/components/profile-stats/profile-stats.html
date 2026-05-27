@@ -1,0 +1,21 @@
+<section class="stats">
+
+  @for(item of stats();track item){
+
+  <div class="stat-card">
+
+    <div class="stat-icon">
+
+      {{item.icon}}
+
+    </div>
+
+    <h2>{{item.count}}</h2>
+
+    <p>{{item.title}}</p>
+
+  </div>
+
+  }
+
+</section>

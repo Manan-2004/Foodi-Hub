@@ -9,14 +9,14 @@ export const routes: Routes = [
     {
         path: 'auth',
         loadChildren: () =>
-            import('./features/auth/auth.routes').then(r => r.AUTH_ROUTES)
+            import('./features/auth/authroutes/auth.routes').then(r => r.AUTH_ROUTES)
     },
 
     //Customer Routes
     {
         path: 'customer',
         loadChildren: () =>
-            import('./features/customer/customer.routes').then(r => r.CUSTOMER_ROUTES)
+            import('./features/customer/customerroutes/customer.routes').then(r => r.CUSTOMER_ROUTES)
     },
 
     // Employee Routes
@@ -29,7 +29,7 @@ export const routes: Routes = [
     {
         path: '**',
         loadComponent: () =>
-            import('./shared/components/not-found/not-found').then(m => m.NotFound)
+            import('./shared/components/not-found/page/not-found').then(m => m.NotFound)
     }
 
 ];

@@ -12,7 +12,7 @@ import {
   RouterLink
 } from '@angular/router';
 
-import { Authservice } from '../../../core/services/frontendservices/auth/authservice';
+import { Authservice } from '../../../../core/services/frontendservices/auth/authservice';
 
 @Component({
   selector: 'app-signup',

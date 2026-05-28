@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { Cartservice } from '../../../core/services/frontendservices/cart/cartservice';
-import { Authservice } from '../../../core/services/frontendservices/auth/authservice';
+import { Cartservice } from '../../../../core/services/frontendservices/cart/cartservice';
+import { Authservice } from '../../../../core/services/frontendservices/auth/authservice';
 
 
 @Component({

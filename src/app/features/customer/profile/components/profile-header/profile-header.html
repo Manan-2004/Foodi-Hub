@@ -22,131 +22,116 @@
 
     </div>
 
-    <button
-    class="edit-btn"
-    (click)="openModal()">
+    <div class="btn-group">
 
-        Edit Profile
+        <button class="edit-btn" (click)="openModal()">
 
-    </button>
+            Edit Profile
+
+        </button>
+
+        <button class="view-btn">
+
+            View Full Profile
+
+        </button>
+
+    </div>
 
 </section>
 
 
 @if(showModal){
 
-<div
-class="modal-overlay"
-[class.close-animation]="isClosing">
+<div class="modal-overlay" [class.close-animation]="isClosing">
 
-<div
-class="modal-box"
-[class.modal-close]="isClosing">
+    <div class="modal-box" [class.modal-close]="isClosing">
 
-<div class="modal-header">
+        <div class="modal-header">
 
-<h2>Edit Profile</h2>
+            <h2>Edit Profile</h2>
 
-<span
-class="close"
-(click)="closeModal()">
+            <span class="close" (click)="closeModal()">
 
-✖
+                ✖
 
-</span>
+            </span>
 
-</div>
+        </div>
 
 
-<form
-[formGroup]="profileForm"
-(ngSubmit)="saveProfile()">
+        <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
 
-<input
-type="text"
-placeholder="Full Name"
-formControlName="name">
+            <input type="text" placeholder="Full Name" formControlName="name">
 
-@if(profileForm.controls.name.touched &&
-profileForm.controls.name.invalid){
+            @if(profileForm.controls.name.touched &&
+            profileForm.controls.name.invalid){
 
-<small class="error">
+            <small class="error">
 
-Minimum 3 characters required
+                Minimum 3 characters required
 
-</small>
+            </small>
 
-}
+            }
 
 
-<input
-type="email"
-placeholder="Email"
-formControlName="email">
+            <input type="email" placeholder="Email" formControlName="email">
 
-@if(profileForm.controls.email.touched &&
-profileForm.controls.email.invalid){
+            @if(profileForm.controls.email.touched &&
+            profileForm.controls.email.invalid){
 
-<small class="error">
+            <small class="error">
 
-Enter valid email
+                Enter valid email
 
-</small>
+            </small>
 
-}
+            }
 
 
-<input
-type="text"
-placeholder="Mobile Number"
-formControlName="mobile">
+            <input type="text" placeholder="Mobile Number" formControlName="mobile">
 
-@if(profileForm.controls.mobile.touched &&
-profileForm.controls.mobile.invalid){
+            @if(profileForm.controls.mobile.touched &&
+            profileForm.controls.mobile.invalid){
 
-<small class="error">
+            <small class="error">
 
-Enter valid 10 digit number
+                Enter valid 10 digit number
 
-</small>
+            </small>
 
-}
+            }
 
 
-<input
-type="text"
-placeholder="City"
-formControlName="city">
+            <input type="text" placeholder="City" formControlName="city">
 
-@if(profileForm.controls.city.touched &&
-profileForm.controls.city.invalid){
+            @if(profileForm.controls.city.touched &&
+            profileForm.controls.city.invalid){
 
-<small class="error">
+            <small class="error">
 
-City required
+                City required
 
-</small>
+            </small>
 
-}
+            }
 
 
-<textarea
-rows="4"
-placeholder="Bio"
-formControlName="bio">
+            <textarea rows="4" placeholder="Bio" formControlName="bio">
 
 </textarea>
 
 
-<button type="submit">
+            <button type="submit">
 
-Save Profile
+                Save Profile
 
-</button>
+            </button>
 
-</form>
+        </form>
 
-</div>
+    </div>
 
 </div>
 

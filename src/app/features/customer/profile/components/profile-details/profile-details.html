@@ -1,20 +1,92 @@
-<section class="details">
+<section class="settings-wrap">
 
-  <h3 class="title">Account Settings</h3>
+  @for(item of settings(); track item.id){
 
-  @for(item of settings(); track item){
+  <div class="setting-card" (click)="handleAction(item.title)">
 
-    <section class="row">
+    <div class="card-glow"></div>
 
-      <span class="icon">{{item.icon}}</span>
+    <!-- left -->
 
-      <div class="content">
-        <h4>{{item.title}}</h4>
-        <p>{{item.desc}}</p>
+    <div class="setting-left">
+
+      <div class="icon-box">
+
+        <i class="{{item.icon}}"></i>
+
       </div>
 
-    </section>
+      <div class="setting-content">
+
+        <h4>{{item.title}}</h4>
+
+        <p>{{item.desc}}</p>
+
+      </div>
+
+    </div>
+
+    <!-- right -->
+
+    <div class="setting-right">
+
+      <span class="badge">
+
+        {{item.badge}}
+
+      </span>
+
+      <div class="arrow">
+
+        <i class="bi bi-chevron-right"></i>
+
+      </div>
+
+    </div>
+
+  </div>
 
   }
 
 </section>
+
+
+@if(showModal()){
+
+<div class="modal-overlay">
+
+  <div class="modal-box">
+
+    <div class="modal-header">
+
+      <h2>Change Password</h2>
+
+      <span class="close" (click)="closeModal()">
+
+        ✖
+
+      </span>
+
+    </div>
+
+    <form [formGroup]="passwordForm" (ngSubmit)="savePassword()">
+
+      <input type="password" placeholder="Current Password" formControlName="currentPassword">
+
+      <input type="password" placeholder="New Password" formControlName="newPassword">
+
+      <input type="password" placeholder="Confirm Password" formControlName="confirmPassword">
+
+      <button type="submit">
+
+        Update Password
+
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+}

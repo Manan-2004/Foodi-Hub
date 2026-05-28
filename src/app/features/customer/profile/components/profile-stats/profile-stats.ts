@@ -9,21 +9,28 @@ import { Component, signal } from '@angular/core';
 export class ProfileStats {
   stats = signal([
     {
-      icon: '📦',
-      count: 15,
-      title: 'Orders'
+      id: 1,
+      icon: 'bi bi-bag-check-fill',
+      count: '128',
+      title: 'Total Orders'
     },
-
     {
-      icon: '❤️',
-      count: 23,
-      title: 'Favorites'
+      id: 2,
+      icon: 'bi bi-heart-fill',
+      count: '36',
+      title: 'Wishlist Items'
     },
-
     {
-      icon: '💰',
-      count: '₹7,540',
-      title: 'Spent'
+      id: 3,
+      icon: 'bi bi-geo-alt-fill',
+      count: '5',
+      title: 'Saved Addresses'
+    },
+    {
+      id: 4,
+      icon: 'bi bi-star-fill',
+      count: '4.9',
+      title: 'Customer Rating'
     }
-  ])
+  ]);
 }

@@ -7,7 +7,7 @@
       <h1>My Profile</h1>
 
       <p>
-        Manage your account, orders and saved addresses
+        Manage your account settings & food activity
       </p>
 
     </div>
@@ -21,85 +21,74 @@
     <section class="section">
 
       <div class="heading">
-
         <div class="line"></div>
-
         <h2>Profile Information</h2>
-
       </div>
 
-      <app-profile-header>
-      </app-profile-header>
+      <app-profile-header></app-profile-header>
 
     </section>
 
-    <!-- overview -->
+
+    <!-- stats -->
 
     <section class="section">
 
       <div class="heading">
-
         <div class="line"></div>
-
         <h2>Overview</h2>
-
       </div>
 
-      <app-profile-stats>
-      </app-profile-stats>
+      <app-profile-stats></app-profile-stats>
 
     </section>
 
-    <!-- actions + address -->
 
-    <section class="grid-layout">
+    <!-- grid -->
 
-      <div class="section">
+    <section class="main-grid">
 
-        <div class="heading">
-
-          <div class="line"></div>
-
-          <h2>Quick Actions</h2>
-
-        </div>
-
-        <app-profile-actions>
-        </app-profile-actions>
-
-      </div>
-
-      <div class="section">
+      <section class="section">
 
         <div class="heading">
-
           <div class="line"></div>
-
-          <h2>Saved Address</h2>
-
+          <h2>Recent Orders</h2>
         </div>
 
-        <app-saved-address>
-        </app-saved-address>
+        <app-recent-orders></app-recent-orders>
+
+      </section>
+
+
+
+      <!-- right -->
+
+      <div class="right-side">
+
+        <section class="section">
+
+          <div class="heading">
+            <div class="line"></div>
+            <h2>Saved Address</h2>
+          </div>
+
+          <app-saved-address></app-saved-address>
+
+        </section>
+
+
+        <section class="section">
+
+          <div class="heading">
+            <div class="line"></div>
+            <h2>Account Settings</h2>
+          </div>
+
+          <app-profile-details></app-profile-details>
+
+        </section>
 
       </div>
-
-    </section>
-
-    <!-- settings -->
-
-    <section class="section">
-
-      <div class="heading">
-
-        <div class="line"></div>
-
-        <h2>Account Settings</h2>
-
-      </div>
-
-      <app-profile-details>
-      </app-profile-details>
 
     </section>
 

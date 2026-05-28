@@ -1,5 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { Alert } from '../messages/alert';
 
 @Injectable({
   providedIn:'root'
@@ -7,6 +8,7 @@ import { Router } from '@angular/router';
 
 export class Authservice{
   router=inject(Router)
+  alert=inject(Alert)
 
   isUserLoggedIn=signal(
     localStorage.getItem('token') ? true:false
@@ -20,7 +22,8 @@ export class Authservice{
     );
 
     this.isUserLoggedIn.set(true);
-
+    
+    this.alert.success('Login SuccessFully','Welcome User')
   }
 
   logout(){
@@ -28,6 +31,8 @@ export class Authservice{
     localStorage.removeItem('token');
 
     this.isUserLoggedIn.set(false);
+
+    this.alert.success('Logout SuccessFully',"You are Logged Out !")
 
     this.router.navigate(['/auth/login'])
 

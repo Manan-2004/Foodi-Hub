@@ -1,0 +1,143 @@
+<section class="orders-section">
+
+  @for(order of orders(); track order.id){
+
+  <div class="order-card">
+
+    <!-- LEFT IMAGE -->
+
+    <div class="image-side">
+
+      <div class="image-wrap">
+
+        <img
+          [src]="order.image"
+          [alt]="order.name">
+
+      </div>
+
+      <span class="live-badge">
+
+        <i class="bi bi-fire"></i>
+        Popular
+
+      </span>
+
+    </div>
+
+    <!-- CENTER CONTENT -->
+
+    <div class="order-content">
+
+      <div class="top-row">
+
+        <div>
+
+          <h3>{{order.name}}</h3>
+
+          <p class="restaurant">
+
+            <i class="bi bi-shop"></i>
+
+            {{order.restaurant}}
+
+          </p>
+
+        </div>
+
+        <div class="price">
+
+          ₹{{order.price}}
+
+        </div>
+
+      </div>
+
+      <!-- DELIVERY -->
+
+      <div class="delivery-info">
+
+        <div class="status">
+
+          <span class="dot"></span>
+
+          {{order.status}}
+
+        </div>
+
+        <div class="time">
+
+          <i class="bi bi-clock-history"></i>
+
+          {{order.time}}
+        </div>
+      </div>
+
+      <!-- PROGRESS -->
+
+      <div class="progress-area">
+
+        <div class="progress-line">
+
+          <span></span>
+
+        </div>
+
+        <div class="steps">
+
+          <div class="step active">
+
+            <i class="bi bi-bag-check-fill"></i>
+
+          </div>
+
+          <div class="step active">
+
+            <i class="bi bi-fire"></i>
+
+          </div>
+
+          <div class="step active">
+
+            <i class="bi bi-truck"></i>
+
+          </div>
+
+          <div class="step">
+
+            <i class="bi bi-house-check-fill"></i>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BOTTOM -->
+
+      <div class="bottom-row">
+
+        <div class="rating">
+
+          <i class="bi bi-star-fill"></i>
+
+          {{order.rating}}
+        </div>
+
+        <button class="reorder-btn">
+
+          <i class="bi bi-arrow-repeat"></i>
+
+          Reorder
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  }
+
+</section>

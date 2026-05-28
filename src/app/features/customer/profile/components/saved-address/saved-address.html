@@ -1,126 +1,265 @@
-<section class="address">
+<section class="address-section">
+
+  <!-- HEADER -->
 
   <div class="address-header">
 
-    <h3>Saved Addresses</h3>
+    <div>
 
-    <button class="add-btn" (click)="openModal()">
+      <h2>Saved Addresses</h2>
 
-      + Add Address
+      <p>
+        Manage your delivery locations
+      </p>
+
+    </div>
+
+    <button
+      class="add-btn"
+      (click)="openModal()">
+
+      <i class="bi bi-plus-lg"></i>
+
+      Add New
 
     </button>
 
   </div>
 
-  @for(addr of addresses();track addr.id){
+  <!-- ADDRESS LIST -->
 
-  <div class="addr-card">
+  <div class="address-list">
 
-    <div class="icon">
-      📍
+    @for(addr of addresses(); track addr.id){
+
+    <div class="address-card">
+
+      <!-- GLOW -->
+
+      <div class="card-glow"></div>
+
+      <!-- TOP -->
+
+      <div class="top-row">
+
+        <div class="type-section">
+
+          <div class="icon-box">
+
+            <i
+              class="bi"
+              [ngClass]="
+                addr.type === 'Home'
+                ? 'bi-house-door-fill'
+                : 'bi-briefcase-fill'
+              ">
+
+            </i>
+
+          </div>
+
+          <div>
+
+            <h3>{{addr.type}}</h3>
+
+            <span class="default-badge">
+
+              Default
+            </span>
+
+          </div>
+
+        </div>
+
+        <button class="menu-btn">
+
+          <i class="bi bi-three-dots"></i>
+
+        </button>
+
+      </div>
+
+      <!-- ADDRESS -->
+
+      <div class="address-content">
+
+        <p>
+
+          {{addr.full}}
+
+        </p>
+
+      </div>
+
+      <!-- BOTTOM -->
+
+      <div class="bottom-row">
+
+        <div class="location">
+
+          <i class="bi bi-geo-alt-fill"></i>
+
+          {{addr.city}}
+        </div>
+
+        <button class="deliver-btn">
+
+          Deliver Here
+
+        </button>
+
+      </div>
+
+      <!-- MAP BG -->
+
+      <div class="map-pattern"></div>
+
     </div>
 
-    <div>
-
-      <h4>{{addr.type}}</h4>
-
-      <p>{{addr.full}}</p>
-
-    </div>
+    }
 
   </div>
-
-  }
 
 </section>
 
 
+<!-- =========================
+     MODAL
+========================= -->
+
 @if(showModal){
 
-<div class="modal-overlay" [class.close-animation]="isClosing">
+<div
+  class="modal-overlay"
+  [class.close-animation]="isClosing">
 
-  <div class="modal-box" [class.modal-close]="isClosing">
+  <div
+    class="modal-box"
+    [class.modal-close]="isClosing">
+
+    <!-- HEADER -->
 
     <div class="modal-header">
 
-      <h2>Add Address</h2>
+      <div>
 
-      <span class="close" (click)="closeModal()">
+        <h2>Add Address</h2>
 
-        ✖
+        <p>
+          Add a new delivery location
+        </p>
 
-      </span>
+      </div>
+
+      <button
+        class="close-btn"
+        (click)="closeModal()">
+
+        <i class="bi bi-x-lg"></i>
+
+      </button>
 
     </div>
 
-    <form [formGroup]="addressForm" (ngSubmit)="saveAddress()">
+    <!-- FORM -->
 
-      <select formControlName="type">
+    <form
+      [formGroup]="addressForm"
+      (ngSubmit)="saveAddress()">
 
-        <option value="Home">
+      <!-- TYPE -->
 
-          Home
+      <div class="input-group">
 
-        </option>
+        <label>
+          Address Type
+        </label>
 
-        <option value="Work">
+        <select formControlName="type">
 
-          Work
+          <option value="Home">
 
-        </option>
+            Home
 
-        <option value="Other">
+          </option>
 
-          Other
+          <option value="Work">
 
-        </option>
+            Work
 
-      </select>
+          </option>
 
+          <option value="Other">
 
-      <input type="text" placeholder="Full Address" formControlName="full">
+            Other
 
+          </option>
 
-      @if(addressForm.controls.full.touched &&
-      addressForm.controls.full.invalid){
+        </select>
 
-      <small class="error">
+      </div>
 
-        Address minimum 10 characters required
+      <!-- ADDRESS -->
 
-      </small>
+      <div class="input-group">
 
-      }
+        <label>
+          Full Address
+        </label>
 
-      <input type="text" placeholder="City" formControlName="city">
+        <input
+          type="text"
+          placeholder="Enter full address"
+          formControlName="full">
 
-      @if(addressForm.controls.city.touched &&
-      addressForm.controls.city.invalid){
+        @if(addressForm.controls.full.touched &&
+        addressForm.controls.full.invalid){
 
-      <small class="error">
+        <small class="error">
 
-        City is required
+          Minimum 10 characters required
 
-      </small>
+        </small>
 
-      }
+        }
 
+      </div>
 
-      <input type="text" placeholder="Pincode" formControlName="pincode">
+      <!-- CITY -->
 
-      @if(addressForm.controls.pincode.touched &&
-      addressForm.controls.pincode.invalid){
+      <div class="input-group">
 
-      <small class="error">
+        <label>
+          City
+        </label>
 
-        Enter valid 6 digit pincode
+        <input
+          type="text"
+          placeholder="Enter city"
+          formControlName="city">
 
-      </small>
+      </div>
 
-      }
+      <!-- PINCODE -->
 
+      <div class="input-group">
 
-      <button type="submit">
+        <label>
+          Pincode
+        </label>
+
+        <input
+          type="text"
+          placeholder="Enter pincode"
+          formControlName="pincode">
+
+      </div>
+
+      <!-- BUTTON -->
+
+      <button type="submit" class="save-btn">
+
+        <i class="bi bi-check-circle-fill"></i>
 
         Save Address
 

@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { Addressservice } from '../../../../../core/services/frontendservices/profile/addressservice';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Alert } from '../../../../../core/services/frontendservices/messages/alert';
+import { NgClass } from '@angular/common';
 
 
 @Component({
   selector: 'app-saved-address',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,NgClass],
   templateUrl: './saved-address.html',
   styleUrl: './saved-address.css'
 })

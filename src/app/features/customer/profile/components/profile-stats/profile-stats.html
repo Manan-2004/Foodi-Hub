@@ -1,18 +1,44 @@
-<section class="stats">
+<section class="stats-container">
 
-  @for(item of stats();track item){
+  @for(item of stats(); track item.id){
 
   <div class="stat-card">
 
-    <div class="stat-icon">
+    <!-- Glow -->
 
-      {{item.icon}}
+    <div class="card-glow"></div>
+
+    <!-- Top -->
+
+    <div class="top">
+
+      <div class="icon-box">
+
+        <i class="{{item.icon}}"></i>
+
+      </div>
+
+      <span class="trend">
+
+        +12%
+
+      </span>
 
     </div>
 
-    <h2>{{item.count}}</h2>
+    <!-- Content -->
 
-    <p>{{item.title}}</p>
+    <div class="content">
+
+      <h2>{{item.count}}</h2>
+
+      <p>{{item.title}}</p>
+
+    </div>
+
+    <!-- Bottom -->
+
+    <div class="bottom-line"></div>
 
   </div>
 

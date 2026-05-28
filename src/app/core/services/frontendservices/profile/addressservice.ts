@@ -8,12 +8,14 @@ export class Addressservice {
     {
       id: 1,
       type: 'Home',
-      full: 'B-12, River View Apartments, Ahmedabad'
+      full: 'B-12, River View Apartments, Ahmedabad',
+      city:'Ahmedabad'
     },
     {
       id: 2,
       type: 'Office',
-      full: 'Tech Park, SG Highway, Ahmedabad'
+      full: 'Tech Park, SG Highway, Ahmedabad',
+      city:'Ahmedabad'
     }
   ]);
 

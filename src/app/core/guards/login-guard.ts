@@ -13,7 +13,7 @@ export const loginGuard: CanActivateFn = () => {
     return router.createUrlTree(['/customer/home']);
   }
 
-  // Login nahi hai → login page open
+  // Login nahi hai -> login page open
   return true;
 
 };

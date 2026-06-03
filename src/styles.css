@@ -13,18 +13,13 @@
 
 html,
 body {
-
     width: 100%;
     min-height: 100%;
-
+    padding-top: 78px;
     overflow-x: hidden;
-
     font-family: 'Segoe UI', sans-serif;
-
     background: #f5f5f5;
-
     scroll-behavior: smooth;
-
 }
 
 /* ===== APP ROOT ===== */
@@ -44,17 +39,12 @@ app-root {
 
 
 .main-content {
-
     flex: 1;
-
+    margin-top: 78px;
     width: 100%;
-
     min-height: 100vh;
-
     padding-top: 90px;
-
     overflow-x: hidden;
-
 }
 
 app-login,
